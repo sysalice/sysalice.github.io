@@ -15,10 +15,27 @@
             background-color: black;
         }
     </style>
+    <script>
+        function showResult(str) {
+            document.getElementById('txt').value = str;
+        }
+        function encSTR() {
+            return btoa(document.getElementById('txt').value);
+        }
+        function decSTR() {
+            return atob(document.getElementByID('txt').value);
+        }
+    </script>
 </head>
 <body>
-<h1>Hello, World!</h1>
-<br />
-<a href='https://github.com/sysalice/sysalice.github.io/releases/download/0.1/tool.zip' target='_blank'>Download Tools</a>
+    <h1>Hello, World!</h1>
+    <br />
+    <br />
+    <label for="txt">Tell us your story:</label>
+    <textarea id="txt" name="txt" rows="6" cols="37"></textarea>
+    <br />
+    <a href='#' onClick='showResult(encSTR());'>Encode Base64</a>
+    <a href='#' onClick='showResult(decSTR());'>Decode Base64</a>
+    <br />
 </body>
 </html>
